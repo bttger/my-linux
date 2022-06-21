@@ -108,7 +108,9 @@ gnome-shell-extension-clipboard-history
 - then add a shortcut ctrl+alt+e (necessary under wayland: https://github.com/tom-james-watson/Emote/wiki/Hotkey-In-Wayland)
 
 ## Bluetooth config
-https://wiki.archlinux.org/title/Bluetooth#Auto_power-on_after_boot/resume
+- endeavourOS has bluetooth not installed by default
+- https://discovery.endeavouros.com/category/bluetooth/
+- https://wiki.archlinux.org/title/Bluetooth#Auto_power-on_after_boot/resume
 
 ## TODO
 - librecad
