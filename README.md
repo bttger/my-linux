@@ -114,3 +114,6 @@ https://wiki.archlinux.org/title/Bluetooth#Auto_power-on_after_boot/resume
 - librecad
 - theme/icons
 - zsh theme
+  - https://github.com/romkatv/zsh4humans#try-it-in-docker
+  - https://github.com/ohmyzsh/ohmyzsh
+  - https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet
