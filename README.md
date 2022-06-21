@@ -1,7 +1,7 @@
 # my-linux
 
 ```bash
-$ pacman -Syu && pacman -Sc && pacman -Syu yay
+$ pacman -Syu yay
 ```
 
 ## Install timeshift and make a snapshot before fucking things up
@@ -85,6 +85,7 @@ gnome-shell-extension-clipboard-history
 - ripgrep
 - tldr
 - ventoy
+- smartmontools
 
 
 ## Screensharing
@@ -104,7 +105,7 @@ gnome-shell-extension-clipboard-history
 
 ## emoji picker
 - yay emoji picker
-- then add a shortcut (necessary under wayland: https://github.com/tom-james-watson/Emote/wiki/Hotkey-In-Wayland)
+- then add a shortcut ctrl+alt+e (necessary under wayland: https://github.com/tom-james-watson/Emote/wiki/Hotkey-In-Wayland)
 
 ## Bluetooth config
 https://wiki.archlinux.org/title/Bluetooth#Auto_power-on_after_boot/resume
