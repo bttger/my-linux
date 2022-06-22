@@ -112,6 +112,13 @@ gnome-shell-extension-clipboard-history
 - https://discovery.endeavouros.com/category/bluetooth/
 - https://wiki.archlinux.org/title/Bluetooth#Auto_power-on_after_boot/resume
 
+## Backups and snapshots
+
+https://wiki.archlinux.org/title/Synchronization_and_backup_programs
+
+- Timeshift (file based increments; uses rsync)
+- Restic or Borg (chunk based increments; encrypted repositories)
+
 ## TODO
 - librecad
 - theme/icons
