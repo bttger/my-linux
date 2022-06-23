@@ -61,4 +61,6 @@ Links:
   - hier lieber secureboot nachahmen mit `find /boot* -type f | xargs sha1sum > ~/.config/my-secureboot/checksums` und dann beim booten jedes mal vergleichen
   - pacman hook um nach updates checksums zu updaten
   - all network blocked until file integrity checked `sudo ufw default deny outgoing` and `sudo ufw default allow outgoing`
-- 
+- https://www.codejam.info/2021/08/super-fast-boot-linux-efistub.html
+- https://www.minhng99.cloud/How-to-install-arch-linux-with-luks-encrypted-rootfs-and-boot-with-efistub/
+- https://gist.github.com/Dko1905/7c9ce651418e01f7838329dd402e5529?permalink_comment_id=4062999
