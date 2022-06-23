@@ -60,5 +60,5 @@ Links:
 - https://nwildner.com/posts/2020-07-04-secure-your-boot-process/
   - hier lieber secureboot nachahmen mit `find /boot* -type f | xargs sha1sum > ~/.config/my-secureboot/checksums` und dann beim booten jedes mal vergleichen
   - pacman hook um nach updates checksums zu updaten
-  - all network blocked until file integrity checked
+  - all network blocked until file integrity checked `sudo ufw default deny outgoing` and `sudo ufw default allow outgoing`
 - 
