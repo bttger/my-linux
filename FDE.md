@@ -56,4 +56,9 @@ Links:
 - https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing
 - https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system
 - https://wiki.archlinux.org/title/GRUB#Encrypted_/boot
+- https://wiki.archlinux.org/title/EFISTUB
+- https://nwildner.com/posts/2020-07-04-secure-your-boot-process/
+  - hier lieber secureboot nachahmen mit `find /boot* -type f | xargs sha1sum > ~/.config/my-secureboot/checksums` und dann beim booten jedes mal vergleichen
+  - pacman hook um nach updates checksums zu updaten
+  - all network blocked until file integrity checked
 - 
