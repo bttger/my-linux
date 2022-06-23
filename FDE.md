@@ -38,6 +38,16 @@ Number  Start   End    Size    File system  Name  Flags
  2      317MB   234GB  233GB                root
  3      234GB   256GB  22.3GB
 
+---
+
+$ lsblk --fs
+NAME                                          FSTYPE      FSVER LABEL    UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+nvme0n1                                                                                                                      
+├─nvme0n1p1                                   vfat        FAT32 NO_LABEL DDAD-9064                               299M     0% /boot/efi
+├─nvme0n1p2                                   crypto_LUKS 1              9390d277-c4f0-4c9f-b240-a5eb884b91f0                
+│ └─luks-9390d277-c4f0-4c9f-b240-a5eb884b91f0 ext4        1.0            4a6a8cd0-92a7-4428-b63c-c9e116a31a48   87.9G    54% /
+└─nvme0n1p3                                   crypto_LUKS 1              7db920f1-479d-4129-af83-a6d7ed868305                
+  └─luks-7db920f1-479d-4129-af83-a6d7ed868305 swap        1     swap     5b6cbd5c-ae5d-418f-a108-bbe87c235cf3                [SWAP]
 ```
 
 Links:
