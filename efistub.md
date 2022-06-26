@@ -66,6 +66,8 @@ echo "tom-v330" > /etc/hostname
 # Set root password
 passwd
 
+# Create a EFI boot entry
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw initrd=\initramfs-linux.img" --verbose
 
 
 ```
