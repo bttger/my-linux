@@ -41,6 +41,30 @@ mkfs.ext4 /dev/<root_partition>
 mount /dev/<root_partition> /mnt
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
+# Install essential packages
+pacstrap /mnt base linux linux-firmware nano efibootmgr
+
+# Generate an fstab file to define how partitions should be mounted into the FS
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# Change root into the new system
+arch-chroot /mnt
+
+# Set the timezone
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+hwclock --systohc
+
+# Set locales
+nano /etc/locale.gen (and uncomment the en.UK utf8 and en.US utf8 lines)
+locale-gen
+echo $'LANG=en_US.UTF-8\nLC_TIME=en_GB.UTF-8\n' > /etc/locale.conf
+echo $'KEYMAP=de-latin1\n' > /etc/vconsole.conf
+
+# Create the hostname file
+echo "tom-v330" > /etc/hostname
+
+# Set root password
+passwd
 
 
 
