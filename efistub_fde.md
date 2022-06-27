@@ -55,11 +55,10 @@ fdisk /dev/<device>
 -> p
 -> w
 
-# Create encrypted container for root fs (TODO check params) 
-cryptsetup luksFormat --type luks2 --sector-size 4096 /dev/<devicePartition>
+# Create encrypted container for root fs
+cryptsetup luksFormat --type luks2 /dev/<devicePartition>
 
-# Check if correct sector size was chosen by cryptsetup
-# (should align with the device's physical sector size; check fdisk; https://wiki.archlinux.org/title/Advanced_Format#dm-crypt) 
+# Check values chosen by cryptsetup
 cryptsetup luksDump /dev/<devicePartition>
 
 # Open the encrypted container
@@ -68,14 +67,12 @@ cryptsetup open /dev/<devicePartition> root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
 
-# Ensure sector size of fs == luks
+# Format and mount the root partition
+mkfs.ext4 /dev/mapper/root
+mount /dev/mapper/root /mnt
 
-# Format the partitions
+# Format and mount the EFI system partition (or boot) partition
 mkfs.fat -F 32 /dev/<efi_system_partition>
-mkfs.ext4 /dev/<root_partition>
-
-# Mount the file systems
-mount /dev/<root_partition> /mnt
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
 # Install essential packages
