@@ -42,6 +42,9 @@ cryptsetup close to_be_wiped
 # Verify it got unmounted
 lsblk
 
+# Run a secure discard (for SSDs; https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#Common_method_with_blkdiscard)
+blkdiscard --secure /dev/<device>
+
 # Partition the disk
 fdisk -l
 fdisk /dev/<device>
