@@ -74,7 +74,7 @@ mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
 # Update the initial ramdisk environment configuration
 nano /etc/mkinitcpio.conf
-# HOOKS=(base udev autodetect keyboard keymap modconf block encrypt filesystems fsck)
+# HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems fsck)
 # COMPRESSION=cat
 
 # Install essential packages
@@ -97,7 +97,7 @@ echo $'LANG=en_US.UTF-8\nLC_TIME=en_GB.UTF-8\n' > /etc/locale.conf
 echo $'KEYMAP=de-latin1\n' > /etc/vconsole.conf
 
 # Create the hostname file
-echo "tom-v330" > /etc/hostname
+echo "<hostname>" > /etc/hostname
 
 # Set root password
 passwd
