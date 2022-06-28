@@ -61,6 +61,7 @@ fdisk /dev/<device>
 -> w
 
 # Create encrypted container for root fs
+# TODO try this with --sector-size 4096 instead of the reported 512 bytes from fdisk
 cryptsetup luksFormat --type luks2 /dev/<devicePartition>
 
 # Check values chosen by cryptsetup
