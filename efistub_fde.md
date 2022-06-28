@@ -64,9 +64,6 @@ cryptsetup luksDump /dev/<devicePartition>
 # Open the encrypted container
 cryptsetup open /dev/<devicePartition> root
 
-# mkfs.ext4 /dev/mapper/root
-# mount /dev/mapper/root /mnt
-
 # Format and mount the root partition
 mkfs.ext4 /dev/mapper/root
 mount /dev/mapper/root /mnt
@@ -74,6 +71,11 @@ mount /dev/mapper/root /mnt
 # Format and mount the EFI system partition (or boot) partition
 mkfs.fat -F 32 /dev/<efi_system_partition>
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
+
+# Update the initial ramdisk environment configuration
+nano /etc/mkinitcpio.conf
+# HOOKS=(base udev autodetect keyboard keymap modconf block encrypt filesystems fsck)
+# COMPRESSION=cat
 
 # Install essential packages
 pacstrap /mnt base linux linux-firmware nano efibootmgr
@@ -100,8 +102,9 @@ echo "tom-v330" > /etc/hostname
 # Set root password
 passwd
 
-# Create a EFI boot entry
-efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "root=PARTUUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX rw initrd=\initramfs-linux.img" --verbose
-
+# Create an EFI boot entry
+# (https://wiki.archlinux.org/title/Persistent_block_device_naming)
+# (https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD))
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw" --verbose
 
 ```
