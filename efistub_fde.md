@@ -108,6 +108,10 @@ echo "<hostname>" > /etc/hostname
 # Set root password
 passwd
 
+# Create new user
+useradd --create-home <username>
+passwd <username>
+
 # Create an EFI boot entry
 # (https://wiki.archlinux.org/title/Persistent_block_device_naming)
 # (https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD))
