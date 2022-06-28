@@ -1,4 +1,6 @@
 ```bash
+# Ensure secure boot is disabled in UEFI settings
+
 # Set the console keyboard layout
 loadkey de-latin1
 
@@ -75,7 +77,7 @@ mount --mkdir /dev/<efi_system_partition> /mnt/boot
 # Update the initial ramdisk environment configuration
 nano /etc/mkinitcpio.conf
 # HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems fsck)
-# COMPRESSION=cat
+# COMPRESSION="cat"
 
 # Install essential packages
 pacstrap /mnt base linux linux-firmware nano efibootmgr
