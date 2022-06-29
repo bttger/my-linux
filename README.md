@@ -1,10 +1,22 @@
 # my-linux
 
+See the [efistub_fde.md](/efistub_fde.md) file for instructions to install arch linux without a bootloader and full disk encryption.
+
+Everything that follows in this readme is not up to date and a WIP.
+
+## TODO
+
+- [ ] Hibernation with an (encrypted) swap file
+- [ ] Running manufacturer microcode before booting the kernel
+- [ ] Testing different kernels (e.g. the linux-zen kernel)
+
+## First steps
+
 ```bash
 $ pacman -Syu yay
 ```
 
-## Install timeshift and make a snapshot before fucking things up
+## Install timeshift and make a snapshot before screwing things up
 ```bash
 $ yay timeshift
 ```
