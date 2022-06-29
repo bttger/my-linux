@@ -1,6 +1,6 @@
 # my-linux
 
-See the [efistub_fde.md](/efistub_fde.md) file for instructions to install arch linux without a bootloader and full disk encryption.
+See the [efistub_fde.md](/efistub_fde.md) file for instructions to install Arch linux without a bootloader and with full disk encryption.
 
 Everything that follows in this readme is not up to date and a WIP.
 
