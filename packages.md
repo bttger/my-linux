@@ -1,7 +1,7 @@
 ```bash
 # Time synchronization
 # Either supplied by gnome or via dedicated tool
-systemd-timesyncd
+# systemd-timesyncd (https://wiki.archlinux.org/title/Systemd-timesyncd)
 
 # DNS over TLS with Cloudflare
 # https://wiki.archlinux.org/title/Systemd-resolved#DNS_over_TLS
