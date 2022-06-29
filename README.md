@@ -44,8 +44,8 @@ $ yay timeshift
 - generate ssh key
 - upload public key to github
 - set up git
-  - git config --global user.name "Tom Boettger"
-  - git config --global user.email "t.boettger@live.de"
+  - git config --global user.name "<name>"
+  - git config --global user.email "<email>"
   - git config --list
 - check if emojis installed || yay noto-fonts-emoji
 - limit the cache size of spotify
