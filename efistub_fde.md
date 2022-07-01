@@ -118,6 +118,10 @@ passwd <username>
 # Create an EFI boot entry
 # (https://wiki.archlinux.org/title/Persistent_block_device_naming)
 # (https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD))
+lsblk --fs
 efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw" --verbose
 
+# Exit the chroot session and reboot
+exit
+reboot
 ```
