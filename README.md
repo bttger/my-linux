@@ -9,6 +9,7 @@ Everything that follows in this readme is not up to date and a WIP.
 - [ ] Hibernation with an (encrypted) swap file
 - [ ] Running manufacturer microcode before booting the kernel
 - [ ] Testing different kernels (e.g. the linux-zen kernel)
+- [ ] HW acceleration in chromium
 
 ## First steps
 
