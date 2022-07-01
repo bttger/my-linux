@@ -78,11 +78,6 @@ mount /dev/mapper/root /mnt
 mkfs.fat -F 32 /dev/<efi_system_partition>
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
-# Update the initial ramdisk environment configuration
-nano /etc/mkinitcpio.conf
-# HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems fsck)
-# COMPRESSION="cat"
-
 # Install essential packages
 pacstrap /mnt base linux linux-firmware nano efibootmgr
 
@@ -91,6 +86,14 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # Change root into the new system
 arch-chroot /mnt
+
+# Update the initial ramdisk environment configuration
+nano /etc/mkinitcpio.conf
+# HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems fsck)
+# COMPRESSION="cat"
+
+# Regenerate the initramfs according to the new configuration preset
+mkinitcpio -P
 
 # Set the timezone
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
