@@ -78,8 +78,8 @@ mount /dev/mapper/root /mnt
 mkfs.fat -F 32 /dev/<efi_system_partition>
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
-# Install essential packages
-pacstrap /mnt base linux linux-firmware nano efibootmgr
+# Install essential packages (with manufacturer microcode, amd-ucode or intel-ucode)
+pacstrap /mnt base linux linux-firmware amd-ucode nano efibootmgr
 
 # Generate an fstab file to define how partitions should be mounted into the FS
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -120,7 +120,7 @@ passwd <username>
 # (https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD))
 # You can delete boot entries via `efibootmgr -b <hexValue> -B`
 lsblk --fs
-efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw" --verbose
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\amd-ucode.img initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw" --verbose
 
 # Exit the chroot session and reboot
 exit
