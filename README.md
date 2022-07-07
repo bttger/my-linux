@@ -6,8 +6,10 @@ Everything that follows in this readme is not up to date and a WIP.
 
 ## TODO
 
-- [ ] Hibernation with an (encrypted) swap file
-- [ ] Running manufacturer microcode before booting the kernel
+- [x] Use the UEFI as bootloader instead of GRUB
+- [x] Encrypt the root partition with LUKS2 and argon2id
+- [x] Running manufacturer microcode before booting the kernel
+- [x] Hibernation with an (encrypted) swap file
 - [ ] Testing different kernels (e.g. the linux-zen kernel)
 - [ ] HW acceleration in chromium
 - [ ] Automatically update mirror list and sort by speed
