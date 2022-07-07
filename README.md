@@ -13,6 +13,7 @@ Everything that follows in this readme is not up to date and a WIP.
 - [ ] Testing different kernels (e.g. the linux-zen kernel)
 - [ ] HW acceleration in chromium
 - [ ] Automatically update mirror list and sort by speed
+- [ ] DNS over TLS
 
 ## First steps
 
