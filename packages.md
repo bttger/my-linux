@@ -1,11 +1,12 @@
 ```bash
 # Enable gnome shell and NetworkManager services
-systemctl enable gdm.service NetworkManager.service
+systemctl enable gdm.service NetworkManager.service systemd-timesyncd.service
 
 # Time synchronization
-# Either supplied by gnome or via dedicated tool
-# systemd-timesyncd (https://wiki.archlinux.org/title/Systemd-timesyncd)
-# Service needs to get enabled
+# Either supplied by gnome or via systemd-timesyncd
+timedatectl set-ntp true
+# Validate it's running
+timedatectl status
 
 # DNS over TLS with Cloudflare
 # https://wiki.archlinux.org/title/Systemd-resolved#DNS_over_TLS
@@ -19,6 +20,42 @@ systemctl enable gdm.service NetworkManager.service
 # Set up a firewall with iptables (due to Docker not supporting nftables) and firewalld (or gufw)
 # Enable service
 
+# Base
+pacman-contrib
+rebuild-detector
+reflector
+
+# Display
+
+# Gnome
+gnome-shell
+power-profiles-daemon
+
+# Networking
+networkmanager
+iwd
+firewalld
+bluez
+wireless-regdb
+
+# Fonts
+freetype2
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-liberation
+
+# Media
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+
+# AUR
+downgrade
+yay
+
+
+# My selection
 
 
 ```
