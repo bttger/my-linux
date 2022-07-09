@@ -16,11 +16,6 @@ Everything that follows in this readme is not up to date and a WIP.
 - [ ] DNS over TLS
 
 
-## Install timeshift and make a snapshot before screwing things up
-```bash
-$ yay timeshift
-```
-
 ## Settings
 
 - gnome tweaks
