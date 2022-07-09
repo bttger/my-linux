@@ -15,11 +15,6 @@ Everything that follows in this readme is not up to date and a WIP.
 - [ ] Automatically update mirror list and sort by speed
 - [ ] DNS over TLS
 
-## First steps
-
-```bash
-$ pacman -Syu yay
-```
 
 ## Install timeshift and make a snapshot before screwing things up
 ```bash
