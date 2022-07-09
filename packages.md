@@ -21,15 +21,34 @@ timedatectl status
 # Enable service
 
 # Base
+linux
+linux-firmware
+base
+base-devel
+amd-ucode (or intel-ucode)
+efibootmgr
 pacman-contrib
 rebuild-detector
 reflector
-
-# Display
+man-db
+man-pages
 
 # Gnome
+gdm
 gnome-shell
 power-profiles-daemon
+gedit
+gnome-calculator
+gnome-control-center
+gnome-keyring
+gnome-color-manager
+gnome-menus
+gnome-tweaks
+gnome-shell-extensions
+gnome-terminal
+nautilus
+sushi
+gthumb
 
 # Networking
 networkmanager
@@ -51,11 +70,28 @@ pipewire-jack
 pipewire-pulse
 
 # AUR
-downgrade
 yay
 
+# My CLI selection
+nano
+downgrade (aur)
+duf
+dua-cli
+inxi
+git
+gitui
+tldr
+fd
+ripgrep
+lsd
+bat
+btop
+ventoy
+smartmontools
 
-# My selection
-
+# My desktop selection
+timeshift (aur)
+emote (aur, needs shortcut config)
+vlc
 
 ```
