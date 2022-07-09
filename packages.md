@@ -33,6 +33,13 @@ reflector
 man-db
 man-pages
 
+# Networking
+networkmanager
+iwd
+firewalld
+bluez
+wireless-regdb
+
 # Gnome
 gdm
 gnome-shell
@@ -49,13 +56,7 @@ gnome-terminal
 nautilus
 sushi
 gthumb
-
-# Networking
-networkmanager
-iwd
-firewalld
-bluez
-wireless-regdb
+xdg-desktop-portal-gnome
 
 # Fonts
 freetype2
@@ -69,15 +70,10 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 
-# AUR
-yay
-
 # My CLI selection
 nano
-downgrade (aur)
 duf
 dua-cli
-inxi
 git
 gitui
 tldr
@@ -86,12 +82,31 @@ ripgrep
 lsd
 bat
 btop
-ventoy
 smartmontools
+nodejs
+npm
+-yay
+-downgrade
+-inxi
+-ventoy-bin
 
 # My desktop selection
-timeshift (aur)
-emote (aur, needs shortcut config)
+-timeshift
+-emote (needs shortcut config)
+-onlyoffice-bin
+-google-chrome
+-insomnia-bin
+-vscodium-bin
+-vscodium-marketplace
+-tor-browser
+-spotify
+-openlens-bin
+firefox
 vlc
+
+# My gnome extension selection
+gnome-shell-extension-gnome-ui-tune-git
+gnome-shell-extension-screenshot-git
+gnome-shell-extension-clipboard-history
 
 ```
