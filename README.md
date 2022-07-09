@@ -1,8 +1,6 @@
 # my-linux
 
-See the [efistub_fde.md](/efistub_fde.md) file for instructions to install Arch linux without a bootloader and with full disk encryption.
-
-Everything that follows in this readme is not up to date and a WIP.
+The instructions in [efistub_fde.md](/efistub_fde.md) install Arch linux without a bootloader and with full disk encryption.
 
 ## TODO
 
@@ -15,6 +13,13 @@ Everything that follows in this readme is not up to date and a WIP.
 - [ ] Automatically update mirror list and sort by speed
 - [ ] DNS over TLS
 
+## Installation
+
+- Prepare bootable ventoy USB with `archlinux.iso`, `packages.list`, and `aur.packages.list` files on it
+- Start arch live iso
+- Follow steps in [efistub_fde.md](/efistub_fde.md)
+- After first boot, [install yay](https://github.com/Jguer/yay#installation)
+- Install AUR packages with `yay -Syu - < aur.packages.list`
 
 ## Settings
 
@@ -43,6 +48,7 @@ Everything that follows in this readme is not up to date and a WIP.
   - git config --global user.email "<email>"
   - git config --list
 - check if emojis installed || yay noto-fonts-emoji
+- chrome: open and set chrome://flags/#enable-webrtc-pipewire-capturer == true
 - limit the cache size of spotify
   - storage.size=2048 (in /home/tom/.config/spotify/prefs)
   - add exclude rule in timeshift (/home/tom/.cache/spotify/Data/**)
@@ -127,7 +133,6 @@ https://wiki.archlinux.org/title/Synchronization_and_backup_programs
 - Restic or Borg (chunk based increments; encrypted repositories)
 
 ## TODO
-- librecad
 - theme/icons
 - zsh theme
   - https://github.com/romkatv/zsh4humans#try-it-in-docker
