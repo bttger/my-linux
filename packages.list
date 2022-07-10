@@ -3,8 +3,8 @@ linux
 linux-firmware
 base
 base-devel
-amd-ucode
-intel-ucode
+~amd-ucode
+~intel-ucode
 efibootmgr
 pacman-contrib
 rebuild-detector
