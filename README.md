@@ -15,7 +15,7 @@ I use this repository to keep track of the components and instructions of my des
 
 ## Installation
 
-- Prepare bootable Ventoy USB with `archlinux.iso`, `packages.list`, and `aur.packages.list` files on it
+- Prepare bootable Ventoy USB with `archlinux.iso` and `packages.list` files on it
 - Start arch live iso
 - Follow the instructions in [efistub_fde.md](/efistub_fde.md)
 - After first boot, [install yay](https://github.com/Jguer/yay#installation)
