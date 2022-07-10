@@ -1,23 +1,23 @@
 # my-linux
 
-The instructions in [efistub_fde.md](/efistub_fde.md) install Arch linux without a bootloader and with full disk encryption.
+I use this repository to keep track of the components and instructions of my desktop Linux system. It's based on [Arch Linux](https://archlinux.org/) and uses the Gnome shell. The goal is to have a simple, secure system that only installs the bare minimum setup and leaves the choice of apps to the user. It even omits the GRUB bootloader which allows much faster decryption of the LUKS2 container and support of the new argon2id key derivation function.
 
-## TODO
+## Features
 
-- [x] Use the UEFI as bootloader instead of GRUB
-- [x] Encrypt the root partition with LUKS2 and argon2id
-- [x] Running manufacturer microcode before booting the kernel
+- [x] Uses the native UEFI as bootloader instead of GRUB (10-30x faster boot and full LUKS2 support)
+- [x] Encrypted root partition with LUKS2 and argon2id (though the initramfs, kernel, and microcode is NOT tamper proof! Secure boot is disabled)
+- [x] Runs CPU manufacturer microcode before booting the kernel
 - [x] Hibernation with an (encrypted) swap file
 - [ ] Testing different kernels (e.g. the linux-zen kernel)
 - [ ] HW acceleration in chromium
-- [ ] Automatically update mirror list and sort by speed
+- [ ] Automatically updates mirror list and sorts by speed
 - [ ] DNS over TLS
 
 ## Installation
 
-- Prepare bootable ventoy USB with `archlinux.iso`, `packages.list`, and `aur.packages.list` files on it
+- Prepare bootable Ventoy USB with `archlinux.iso`, `packages.list`, and `aur.packages.list` files on it
 - Start arch live iso
-- Follow steps in [efistub_fde.md](/efistub_fde.md)
+- Follow the instructions in [efistub_fde.md](/efistub_fde.md)
 - After first boot, [install yay](https://github.com/Jguer/yay#installation)
 - Install AUR packages with `yay -Syu - < aur.packages.list`
 
