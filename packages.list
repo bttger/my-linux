@@ -1,0 +1,88 @@
+# Base
+linux
+linux-firmware
+base
+base-devel
+amd-ucode
+intel-ucode
+efibootmgr
+pacman-contrib
+rebuild-detector
+reflector
+man-db
+man-pages
+
+# Networking
+networkmanager
+iwd
+firewalld
+bluez
+wireless-regdb
+
+# Gnome
+gdm
+gnome-shell
+power-profiles-daemon
+gedit
+gnome-calculator
+gnome-control-center
+gnome-keyring
+gnome-color-manager
+gnome-menus
+gnome-tweaks
+gnome-shell-extensions
+gnome-terminal
+nautilus
+sushi
+gthumb
+xdg-desktop-portal-gnome
+
+# Fonts
+freetype2
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-liberation
+
+# Media
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+
+# My CLI selection
++nano
++duf
++dua-cli
++git
++gitui
++tldr
++fd
++ripgrep
++lsd
++bat
++btop
++smartmontools
++nodejs
++npm
++-downgrade
++-inxi
++-ventoy-bin
+
+# My desktop selection
++firefox
++vlc
++-timeshift
++-emote
++-onlyoffice-bin
++-google-chrome
++-insomnia-bin
++-vscodium-bin
++-vscodium-marketplace
++-tor-browser
++-spotify
++-openlens-bin
+
+# My gnome extension selection
++-gnome-shell-extension-gnome-ui-tune-git
++-gnome-shell-extension-screenshot-git
++-gnome-shell-extension-clipboard-history
