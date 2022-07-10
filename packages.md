@@ -101,8 +101,8 @@ firefox
 vlc
 
 # My gnome extension selection
-gnome-shell-extension-gnome-ui-tune-git
-gnome-shell-extension-screenshot-git
-gnome-shell-extension-clipboard-history
+-gnome-shell-extension-gnome-ui-tune-git
+-gnome-shell-extension-screenshot-git
+-gnome-shell-extension-clipboard-history
 
 ```
