@@ -19,7 +19,7 @@ I use this repository to keep track of the components and instructions of my des
 - Start arch live iso
 - Follow the instructions in [efistub_fde.md](/efistub_fde.md)
 - After first boot, [install yay](https://github.com/Jguer/yay#installation)
-- Install AUR packages with `yay -Syu - < aur.packages.list`
+- Install AUR packages with `grep -Po "(?<=^\+\-).+" packages.list | yay -Syu -`
 
 ## Settings
 
