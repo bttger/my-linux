@@ -132,6 +132,17 @@ https://wiki.archlinux.org/title/Synchronization_and_backup_programs
 - Timeshift (file based increments; uses rsync)
 - Restic or Borg (chunk based increments; encrypted repositories)
 
+## Tere
+
+Insert to zsh config (`.zshrc`):
+
+```
+tere() {
+    local result=$(/path/to/tere "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
+```
+
 ## TODO
 - theme/icons
 - zsh theme
