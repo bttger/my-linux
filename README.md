@@ -52,6 +52,8 @@ I use this repository to keep track of the components and instructions of my des
 - limit the cache size of spotify
   - storage.size=2048 (in /home/tom/.config/spotify/prefs)
   - add exclude rule in timeshift (/home/tom/.cache/spotify/Data/**)
+- disable system-wide global npm packages and enable user-wide packages
+  - npm set prefix="$HOME/.local"
 
 ## Gnome extensions
 
