@@ -63,6 +63,8 @@ gnome-shell-extension-gnome-ui-tune-git
 gnome-shell-extension-screenshot-git
 gnome-shell-extension-clipboard-history
 
+Check out:
+https://gitlab.gnome.org/jrahmatzadeh/just-perfection
 ```
 
 ## Apps
