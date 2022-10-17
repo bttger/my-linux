@@ -16,10 +16,6 @@ ping archlinux.org
 # Verify the boot mode (If dir can be listed without problems, the system got booted in UEFI mode)
 ls /sys/firmware/efi/efivars
 
-# Update system clock
-timedatectl set-ntp true
-timedatectl status
-
 # Check which is the fastest cipher algorithm
 cryptsetup benchmark
 
