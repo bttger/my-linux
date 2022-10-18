@@ -119,7 +119,7 @@ passwd <username>
 
 # Create swap file of size 21000 Mebibyte (depending of the size of RAM)
 dd if=/dev/zero of=/swapfile bs=1M count=21000 status=progress
-chown <username> /swapfile
+chown root:root /swapfile
 chmod 0600 /swapfile
 mkswap -U clear /swapfile
 swapon /swapfile
