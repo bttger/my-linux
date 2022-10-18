@@ -126,14 +126,15 @@ swapon /swapfile
 nano /etc/fstab
 # add '/swapfile none swap defaults 0 0' line
 
-# Get the physical offset of the first block in the swap file
-filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
-# alternatively with 'filefrag -v /swapfile' (first number in row 0)
-
 # Change the wireless daemon of networkmanager
 nano /etc/NetworkManager/conf.d/wifi_backend.conf
 ->[device]
 ->wifi.backend=iwd
+->wifi.iwd.autoconnect=yes
+
+# Get the physical offset of the first block in the swap file
+filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
+# alternatively with 'filefrag -v /swapfile' (first number in row 0)
 
 # Create an EFI boot entry
 # (https://wiki.archlinux.org/title/Persistent_block_device_naming)
