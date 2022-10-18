@@ -81,7 +81,7 @@ mkfs.fat -F 32 /dev/<efi_system_partition>
 mount --mkdir /dev/<efi_system_partition> /mnt/boot
 
 # Install essential packages (with manufacturer microcode, amd-ucode or intel-ucode, optionally replace 'amd' in regex)
-grep -Po "^[^-+#~].+|(?<=^~)amd.+|(?<=^\+)[^-].+" packages.list | pacstrap /mnt -
+grep -Po "^[^-+#~].+|(?<=^~)amd.+|(?<=^\+)[^-].+" packages.list | pacstrap -K /mnt -
 
 # Generate an fstab file to define how partitions should be mounted into the FS
 genfstab -U /mnt >> /mnt/etc/fstab
