@@ -16,6 +16,10 @@ ping archlinux.org
 # Verify the boot mode (If dir can be listed without problems, the system got booted in UEFI mode)
 ls /sys/firmware/efi/efivars
 
+# start wiping the disk on which the system will be installed (unnecessary for new SSDs)
+# check the device name
+lsblk
+
 # Check which is the fastest cipher algorithm
 cryptsetup benchmark
 
@@ -40,6 +44,8 @@ lsblk
 
 # Run a secure discard (for SSDs; https://wiki.archlinux.org/title/Solid_state_drive/Memory_cell_clearing#Common_method_with_blkdiscard)
 blkdiscard --secure /dev/<device>
+
+# The wiping is now finished
 
 # Partition the disk
 fdisk -l
