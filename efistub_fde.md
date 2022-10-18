@@ -2,7 +2,7 @@
 # Ensure secure boot is disabled in UEFI settings
 
 # Set the console keyboard layout
-loadkey de-latin1
+loadkeys de-latin1
 
 # Connect to wifi (If it doesn't work, check: https://wiki.archlinux.org/title/Network_configuration/Wireless#Rfkill_caveat)
 iwctl
