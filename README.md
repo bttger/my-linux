@@ -31,6 +31,7 @@ I use this repository to keep track of the components and instructions of my des
   - "switch applications" super+tab
   - "move to workspace on the left/right" super+alt+left/right
   - "move window to workspace on the left/right" super+shift+left/right
+  - "maximise window" super+up
   - custom shortcut to open the terminal name command:"gnome-terminal" super+t
 - search: deactivate search for software
 - screen lock delay 1 min
