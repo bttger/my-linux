@@ -11,6 +11,7 @@ rebuild-detector
 reflector
 man-db
 man-pages
+nano
 
 # Networking
 networkmanager
