@@ -8,6 +8,7 @@ I use this repository to keep track of the components and instructions of my des
 - [x] Encrypted root partition with LUKS2 and argon2id (though the initramfs, kernel, and microcode is NOT tamper proof! Secure boot is disabled)
 - [x] Runs CPU manufacturer microcode before booting the kernel
 - [x] Hibernation with an (encrypted) swap file
+- [ ] iwd instead of wpa_supplicant
 - [ ] Testing different kernels (e.g. the linux-zen kernel)
 - [ ] HW acceleration in chromium
 - [ ] Automatically updates mirror list and sorts by speed
