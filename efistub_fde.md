@@ -91,8 +91,8 @@ arch-chroot /mnt
 
 # Update the initial ramdisk environment configuration
 nano /etc/mkinitcpio.conf
-# HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems fsck)
-# COMPRESSION="cat"
+-> HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems resume fsck)
+-> COMPRESSION="cat"
 
 # Regenerate the initramfs according to the new configuration preset
 mkinitcpio -P
@@ -128,9 +128,9 @@ nano /etc/fstab
 
 # Change the wireless daemon of networkmanager
 nano /etc/NetworkManager/conf.d/wifi_backend.conf
-->[device]
-->wifi.backend=iwd
-->wifi.iwd.autoconnect=yes
+-> [device]
+-> wifi.backend=iwd
+-> wifi.iwd.autoconnect=yes
 
 # Enable display manager, network manager, firewall
 systemctl enable gdm.service NetworkManager.service firewalld.service
