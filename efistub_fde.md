@@ -133,7 +133,7 @@ nano /etc/NetworkManager/conf.d/wifi_backend.conf
 ->wifi.iwd.autoconnect=yes
 
 # Enable display manager and network manager
-systemctl enable gdm.service NetworkManager.service
+systemctl enable gdm.service NetworkManager.service firewalld.service
 
 # Get the physical offset of the first block in the swap file
 filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
