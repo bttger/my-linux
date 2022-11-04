@@ -140,7 +140,7 @@ filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
 # (https://wiki.archlinux.org/title/Persistent_block_device_naming)
 # (https://wiki.archlinux.org/title/Dm-crypt/Specialties#Discard/TRIM_support_for_solid_state_drives_(SSD))
 # You can delete boot entries via `efibootmgr -b <hexValue> -B`
-lsblk --fs
+blkid | grep "crypt"
 efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\amd-ucode.img initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw resume=/dev/mapper/root resume_offset=<physical_offset>" --verbose
 
 # Exit the chroot session and reboot
