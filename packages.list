@@ -53,7 +53,6 @@ pipewire-jack
 pipewire-pulse
 
 # My CLI selection
-+nano
 +duf
 +dua-cli
 +git
@@ -79,7 +78,7 @@ pipewire-pulse
 +-emote
 +-onlyoffice-bin
 +-google-chrome
-+-insomnia-bin
++-postman-bin
 +-vscodium-bin
 +-vscodium-marketplace
 +-tor-browser
