@@ -132,8 +132,12 @@ nano /etc/NetworkManager/conf.d/wifi_backend.conf
 ->wifi.backend=iwd
 ->wifi.iwd.autoconnect=yes
 
-# Enable display manager and network manager
+# Enable display manager, network manager, firewall
 systemctl enable gdm.service NetworkManager.service firewalld.service
+
+# Add user to sudoers file (under the root user)
+nano /etc/sudoers
+-> <username> ALL=(ALL:ALL) ALL
 
 # Get the physical offset of the first block in the swap file
 filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
