@@ -9,7 +9,7 @@ I use this repository to keep track of the components and instructions of my des
 - [x] Runs CPU manufacturer microcode before booting the kernel
 - [x] Hibernation with an (encrypted) swap file
 - [x] iwd instead of wpa_supplicant
-- [ ] Testing different kernels (e.g. the linux-zen kernel)
+- [x] Testing different kernels (e.g. the linux-zen kernel)
 - [ ] HW acceleration in chromium
 - [ ] Automatically updates mirror list and sorts by speed
 - [ ] DNS over TLS
@@ -30,7 +30,7 @@ I use this repository to keep track of the components and instructions of my des
 - keyboard shortcuts
   - "switch windows" alt+tab
   - "switch applications" super+tab
-  - "move to workspace on the left/right" super+alt+left/right
+  - "move to workspace on the left/right" ctrl/super+alt+left/right
   - "move window to workspace on the left/right" super+shift+left/right
   - "maximise window" super+up
   - custom shortcut to open the terminal name command:"gnome-terminal" super+t
@@ -49,7 +49,6 @@ I use this repository to keep track of the components and instructions of my des
   - git config --global user.name "<name>"
   - git config --global user.email "<email>"
   - git config --list
-- check if emojis installed || yay noto-fonts-emoji
 - chrome: open and set chrome://flags/#enable-webrtc-pipewire-capturer == true
 - limit the cache size of spotify
   - storage.size=2048 (in /home/tom/.config/spotify/prefs)
@@ -62,11 +61,8 @@ I use this repository to keep track of the components and instructions of my des
 ```bash
 # install with yay
 gnome-shell-extension-gnome-ui-tune-git
-gnome-shell-extension-screenshot-git
 gnome-shell-extension-clipboard-history
 
-Check out:
-https://gitlab.gnome.org/jrahmatzadeh/just-perfection
 ```
 
 ## Apps
