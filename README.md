@@ -55,6 +55,9 @@ I use this repository to keep track of the components and instructions of my des
   - add exclude rule in timeshift (/home/tom/.cache/spotify/Data/**)
 - disable system-wide global npm packages and enable user-wide packages
   - npm set prefix="$HOME/.local"
+- enable automatic mirror list updates
+  - sudo nano /etc/xdg/reflector/reflector.config
+  - systemctl enable reflector.service
 
 ## Gnome extensions
 
