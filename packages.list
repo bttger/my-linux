@@ -19,6 +19,7 @@ networkmanager
 iwd
 firewalld
 bluez
+bluez-utils
 wireless-regdb
 
 # Gnome
