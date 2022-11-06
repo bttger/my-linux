@@ -34,7 +34,6 @@ gnome-color-manager
 gnome-menus
 gnome-tweaks
 gnome-shell-extensions
-gnome-terminal
 nautilus
 sushi
 gthumb
@@ -55,6 +54,7 @@ pipewire-jack
 pipewire-pulse
 
 # My CLI selection
+kitty
 +duf
 +dua-cli
 +git
