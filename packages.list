@@ -1,5 +1,6 @@
 # Base
 linux
+linux-zen
 linux-firmware
 base
 base-devel
@@ -67,25 +68,25 @@ pipewire-pulse
 +smartmontools
 +nodejs
 +npm
-+-downgrade
 +-inxi
 +-ventoy-bin
 
 # My desktop selection
 +firefox
 +vlc
++okular
++obsidian
 +-timeshift
 +-emote
 +-onlyoffice-bin
 +-google-chrome
 +-postman-bin
 +-vscodium-bin
-+-vscodium-marketplace
++-vscodium-bin-marketplace
 +-tor-browser
 +-spotify
 +-openlens-bin
 
 # My gnome extension selection
 +-gnome-shell-extension-gnome-ui-tune-git
-+-gnome-shell-extension-screenshot-git
 +-gnome-shell-extension-clipboard-history
