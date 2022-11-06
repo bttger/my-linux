@@ -92,7 +92,8 @@ arch-chroot /mnt
 # Update the initial ramdisk environment configuration
 nano /etc/mkinitcpio.conf
 -> HOOKS=(base udev autodetect modconf block keyboard keymap encrypt filesystems resume fsck)
--> COMPRESSION="cat"
+-> COMPRESSION="lz4"
+-> COMPRESSION_OPTIONS=(-9)
 
 # Regenerate the initramfs according to the new configuration preset
 mkinitcpio -P
@@ -149,6 +150,8 @@ filefrag -v /swapfile | awk '$1=="0:" {print substr($4, 1, length($4)-2)}'
 # You can delete boot entries via `efibootmgr -b <hexValue> -B`
 blkid | grep "crypt"
 efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux" --loader "\vmlinuz-linux" --unicode "initrd=\amd-ucode.img initrd=\initramfs-linux.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw resume=/dev/mapper/root resume_offset=<physical_offset>" --verbose
+
+efibootmgr --disk /dev/sda --part 1 --create --label "Arch Linux Zen" --loader "\vmlinuz-linux-zen" --unicode "initrd=\amd-ucode.img initrd=\initramfs-linux-zen.img cryptdevice=UUID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX:root:allow-discards root=/dev/mapper/root rw resume=/dev/mapper/root resume_offset=<physical_offset>" --verbose
 
 # Exit the chroot session and reboot
 exit
