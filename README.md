@@ -1,6 +1,6 @@
 # my-linux
 
-I use this repository to keep track of the components and instructions of my desktop Linux system. It's based on [Arch Linux](https://archlinux.org/) and uses the Gnome shell. The goal is to have a simple, secure system that only installs the bare minimum setup and leaves the choice of apps to the user. It even omits the GRUB bootloader which allows much faster decryption of the LUKS2 container and support of the new argon2id key derivation function.
+I use this repository to keep track of the components and instructions that I used to set up my desktop Linux system. It's based on [Arch Linux](https://archlinux.org/) and uses the Gnome shell. I like Arch-based distros like Endeavour OS but unfortunately they only support GRUB which doesn't support my LUKS configuration with argon2id. Also, probably the most important factor for this "project", setting it up all on your own teaches you about Linux, the boot process and the interplay between software.
 
 ## Features
 
@@ -12,7 +12,7 @@ I use this repository to keep track of the components and instructions of my des
 - [x] Testing different kernels (e.g. the linux-zen kernel)
 - [x] Automatically updates mirror list and sorts by speed
 - [ ] HW acceleration in chromium
-- [ ] DNS over TLS
+- [ ] DNS over TLS (not needed anymore, outsourced to my home network DNS server)
 
 ## Installation
 
