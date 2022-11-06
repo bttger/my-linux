@@ -33,7 +33,7 @@ I use this repository to keep track of the components and instructions that I us
   - "move to workspace on the left/right" ctrl/super+alt+left/right
   - "move window to workspace on the left/right" super+shift+left/right
   - "maximise window" super+up
-  - custom shortcut to open the terminal name command:"gnome-terminal" super+t
+  - custom shortcut to open the terminal name command:"kitty" super+t
 - search: deactivate search for software
 - screen lock delay 1 min
 - no notifications on lock screen
