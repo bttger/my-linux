@@ -10,8 +10,8 @@ I use this repository to keep track of the components and instructions of my des
 - [x] Hibernation with an (encrypted) swap file
 - [x] iwd instead of wpa_supplicant
 - [x] Testing different kernels (e.g. the linux-zen kernel)
+- [x] Automatically updates mirror list and sorts by speed
 - [ ] HW acceleration in chromium
-- [ ] Automatically updates mirror list and sorts by speed
 - [ ] DNS over TLS
 
 ## Installation
