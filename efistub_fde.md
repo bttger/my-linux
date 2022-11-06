@@ -134,7 +134,7 @@ nano /etc/NetworkManager/conf.d/wifi_backend.conf
 -> wifi.iwd.autoconnect=yes
 
 # Enable display manager, network manager, firewall
-systemctl enable gdm.service NetworkManager.service firewalld.service
+systemctl enable gdm.service NetworkManager.service firewalld.service bluetooth.service
 
 # Add user to sudoers file (under the root user)
 nano /etc/sudoers
