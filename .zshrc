@@ -17,6 +17,18 @@ setopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+
+bindkey "^[[H" beginning-of-line # HOME
+bindkey "^[[F" end-of-line # END
+bindkey "^[[3~" delete-char # DEL
+bindkey "^[[1;5C" forward-word # CTRL+ARROW_RIGHT - move cursor forward one word
+bindkey "^[[1;5D" backward-word # CTRL+ARROW_LEFT - move cursor backward one word
+bindkey "^H" backward-delete-word # CTRL+BACKSLASH - delete a whole word before cursor
+bindkey "^[[3;5~" delete-word # CTRL+DEL - delete a whole word after cursor
+bindkey "^Z" undo # CTRL+Z
+bindkey "^Y" redo # CTRL+Y
+bindkey "^R" redo # CTRL+R
+
 # If the internal history needs to be trimmed to add the current command line, setting this
 # option will cause the oldest history event that has a duplicate to be lost before losing a
 # unique event from the list. You should be sure to set the value of HISTSIZE to a larger
@@ -50,10 +62,24 @@ setopt INC_APPEND_HISTORY
 PROMPT="%B%F{magenta}[%n:%f%F{blue}%(4~|../|)%3~%f%F{magenta}]%f%b "
 RPROMPT="%B%F{red}%(0?||Exit code: %?)%f%b"
 
-
+# CTRL+ARROW_RIGHT   - partially accept suggestion up to the point that the cursor moves to
+# ARROW_RIGHT or END - accept suggestion and replace contents of the command line buffer with the suggestion
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# CTRL+T - paste the selected files and directories onto the command-line
+# CTRL+R - paste the selected command from history onto the command-line
+# ALT+C  - cd into the selected directory
 source /usr/share/fzf/key-bindings.zsh
+# Type ** and hit tab (eg. with the cd command; works with directories, files, process IDs, hostnames, environment variables)
 source /usr/share/fzf/completion.zsh
+
+# Sift through history for previous commands matching everything up to current cursor position.
+# Moves the cursor to the end of line after each match.
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # ARROW_UP
+bindkey "^[[B" down-line-or-beginning-search # ARROW_DOWN
 
 # Must go last (see https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
