@@ -17,7 +17,7 @@ setopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-
+# Key bindings
 bindkey "^[[H" beginning-of-line # HOME
 bindkey "^[[F" end-of-line # END
 bindkey "^[[3~" delete-char # DEL
@@ -28,6 +28,20 @@ bindkey "^[[3;5~" delete-word # CTRL+DEL - delete a whole word after cursor
 bindkey "^Z" undo # CTRL+Z
 bindkey "^Y" redo # CTRL+Y
 bindkey "^R" redo # CTRL+R
+
+# Aliases
+alias md="mkdir -p"
+alias rd="rmdir"
+alias ..="cd .."
+alias ....="cd ../.."
+alias ......="cd ../../.."
+alias t="tere --filter-search"
+
+# https://github.com/mgunyho/tere
+tere() {
+    local result=$(command tere "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
 
 # If the internal history needs to be trimmed to add the current command line, setting this
 # option will cause the oldest history event that has a duplicate to be lost before losing a
