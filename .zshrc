@@ -27,7 +27,6 @@ bindkey "^H" backward-delete-word # CTRL+BACKSLASH - delete a whole word before 
 bindkey "^[[3;5~" delete-word # CTRL+DEL - delete a whole word after cursor
 bindkey "^Z" undo # CTRL+Z
 bindkey "^Y" redo # CTRL+Y
-bindkey "^R" redo # CTRL+R
 
 # Aliases
 alias md="mkdir -p"
