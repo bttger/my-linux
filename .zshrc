@@ -27,6 +27,7 @@ bindkey "^H" backward-delete-word # CTRL+BACKSLASH - delete a whole word before 
 bindkey "^[[3;5~" delete-word # CTRL+DEL - delete a whole word after cursor
 bindkey "^Z" undo # CTRL+Z
 bindkey "^Y" redo # CTRL+Y
+bindkey "^R" redo # CTRL+R
 
 # Aliases
 alias md="mkdir -p"
@@ -35,6 +36,7 @@ alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
 alias t="tere --filter-search"
+alias hib="systemctl hibernate"
 
 # https://github.com/mgunyho/tere
 tere() {
@@ -70,10 +72,17 @@ setopt HIST_SAVE_NO_DUPS
 # incrementally (as soon as they are entered), rather than waiting until the shell exits.
 setopt INC_APPEND_HISTORY
 
+# Git status in prompt with the $(gitprompt) expansion
+source /usr/share/zsh/scripts/git-prompt.zsh
+ZSH_THEME_GIT_PROMPT_PREFIX=" ("
+ZSH_THEME_GIT_PROMPT_SUFFIX=")"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_TAG="%{$fg_bold[white]%}"
+
 # Customizing the prompt
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
-PROMPT="%B%F{magenta}[%n:%f%F{blue}%(4~|../|)%3~%f%F{magenta}]%f%b "
-RPROMPT="%B%F{red}%(0?||Exit code: %?)%f%b"
+PROMPT='%B%F{magenta}[%n:%f%F{blue}%(4~|../|)%3~%f%b$(gitprompt)%B%F{magenta}]%f%b '
+RPROMPT='%B%F{red}%(0?||Exit code: %?)%f%b'
 
 # CTRL+ARROW_RIGHT   - partially accept suggestion up to the point that the cursor moves to
 # ARROW_RIGHT or END - accept suggestion and replace contents of the command line buffer with the suggestion
