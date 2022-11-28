@@ -37,6 +37,7 @@ gnome-shell-extensions
 nautilus
 sushi
 gthumb
+xdg-desktop-portal
 xdg-desktop-portal-gnome
 xdg-user-dirs
 xdg-utils
