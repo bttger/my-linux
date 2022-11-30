@@ -135,6 +135,7 @@ nano /etc/NetworkManager/conf.d/wifi_backend.conf
 
 # Enable display manager, network manager, firewall
 systemctl enable gdm.service NetworkManager.service firewalld.service bluetooth.service
+systemctl disable wpa_supplicant.service
 
 # Add user to sudoers file (under the root user)
 nano /etc/sudoers
