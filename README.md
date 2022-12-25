@@ -107,6 +107,9 @@ sudo cryptsetup open /dev/sda1 <luks_label>
 sudo mkfs.ext4 -L <fs_label> /dev/mapper/<luks_label>
 mount /dev/mapper/<luks_label> <mount_point>
 umount <mount_point>
+
+# wipe disk with zeros
+dd if=/dev/zero of=/dev/sdb1 status=progress bs=4M
 ```
 
 > a fs label can only be 16 bytes max
