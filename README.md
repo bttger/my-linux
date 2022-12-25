@@ -96,8 +96,33 @@ gnome-shell-extension-clipboard-history
 
 ## Backups and snapshots
 
-https://wiki.archlinux.org/title/Synchronization_and_backup_programs
 
-- Timeshift (file based increments; uses rsync)
-- Restic or Borg (chunk based increments; encrypted repositories)
+### Prepare backup/snapshot disk
+```
+lsblk --fs
+sudo fdisk -l /dev/sda
+sudo fdisk /dev/sda
+sudo cryptsetup luksFormat --type luks2 --label <luks_label> /dev/sda1
+sudo cryptsetup open /dev/sda1 <luks_label>
+sudo mkfs.ext4 -L <fs_label> /dev/mapper/<luks_label>
+mount /dev/mapper/<luks_label> <mount_point>
+umount <mount_point>
+```
 
+> a fs label can only be 16 bytes max
+
+### Copying stuff to my backup disk with rsync
+
+```
+rsync -az --info=progress2 --no-i-r <source_path>/ /<target_path>
+```
+
+> if the origin dir ends with trailing slash, it will copy its contents into target dir, otherwise the origin dir will be copied as single folder into target
+
+### Creating a snapshot for my snapshot disks with restic
+
+```
+restic init --repo <location>/<repo_name>
+restic backup -v -r <location>/<repo_name> <source_dir>
+
+```
