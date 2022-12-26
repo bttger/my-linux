@@ -129,3 +129,5 @@ restic init --repo <location>/<repo_name>
 restic backup -v -r <location>/<repo_name> <source_dir>
 
 ```
+
+> first `cd` to parent dir of the `source_dir` to avoid too many nested dirs in the repository and conflicts in the mounting point path (so that the file change detection of restic works)
