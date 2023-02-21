@@ -133,8 +133,9 @@ nano /etc/NetworkManager/conf.d/wifi_backend.conf
 -> wifi.backend=iwd
 -> wifi.iwd.autoconnect=yes
 
-# Enable display manager, network manager, firewall
-systemctl enable gdm.service NetworkManager.service firewalld.service bluetooth.service
+# Enable display manager, network manager, firewall, etc.
+# the fstrim.timer only works for disks with TRIM support and the :allow-discards flag set for LUKS2
+systemctl enable gdm.service NetworkManager.service firewalld.service bluetooth.service paccache.timer fstrim.timer
 systemctl disable wpa_supplicant.service
 
 # Add user to sudoers file (under the root user)
