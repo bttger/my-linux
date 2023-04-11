@@ -1,0 +1,10 @@
+[Unit]
+Description=Automatic backlight adjustment by daytime
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/tom/Documents/vced/my-linux/auto-backlight.sh
+
+[Install]
+WantedBy=default.target

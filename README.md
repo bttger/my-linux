@@ -63,6 +63,30 @@ I use this repository to keep track of the components and instructions that I us
   - systemctl enable reflector.service
 - Zsh config (See [here](https://github.com/bttger/plugin-manager-free-zsh/))
 
+## Automatic Backlight Adjustment
+
+```
+# install ddccontrol and make sure the i2c-dev kernel module is installed and loaded
+modinfo i2c-dev
+lsmod | grep "i2c-dev"
+
+# insert "i2c-dev" in the following file and reboot
+sudo nano /etc/modules-load.d/i2c-dev.conf
+
+mkdir -p ~/.config/systemd/user
+# copy the systemd files from this repo to the created dir
+
+# let the daemon check for new files
+sudo systemctl daemon-reload
+
+# then enable the service and timer
+systemctl --user enable auto-backlight.service
+systemctl --user enable auto-backlight.timer
+
+# immediately schedule the next run
+systemctl --user start auto-backlight.timer
+```
+
 ## Gnome extensions
 
 ```bash

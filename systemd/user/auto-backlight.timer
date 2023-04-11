@@ -1,0 +1,10 @@
+[Unit]
+Description=Run auto-backlight.service every hour
+
+[Timer]
+OnCalendar=*-*-* *:00:00
+Persistent=true
+Unit=auto-backlight.service
+
+[Install]
+WantedBy=timers.target
