@@ -26,7 +26,7 @@ wireless-regdb
 gdm
 gnome-shell
 power-profiles-daemon
-gedit
+gnome-text-editor
 gnome-calculator
 gnome-control-center
 gnome-keyring
