@@ -43,6 +43,7 @@ I use this repository to keep track of the components and instructions that I us
   - ublock origin
   - sponsorblock
   - return youtube dislike
+  - h264ify
   - bitwarden
   - chrome://flags/#enable-webrtc-pipewire-capturer = enabled # to make screensharing with pipewire work
   - chrome://flags/#enable-gpu-rasterization = enabled
