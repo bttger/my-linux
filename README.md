@@ -23,6 +23,7 @@ I use this repository to keep track of the components and instructions that I us
 - Install AUR packages with `grep -Po "(?<=^\+\-).+" packages.list | yay -Syu -`
 
 ## Settings
+
 - gnome doesn't apply vconsole.conf so the keymap must be set in the settings
 - gnome tweaks
   - mouse click emulation -> fingers
@@ -56,12 +57,15 @@ I use this repository to keep track of the components and instructions that I us
   - git config --list
 - limit the cache size of spotify
   - storage.size=2048 (in /home/tom/.config/spotify/prefs)
-  - add exclude rule in timeshift (/home/tom/.cache/spotify/Data/**)
+  - add exclude rule in timeshift (/home/tom/.cache/spotify/Data/\*\*)
 - disable system-wide global npm packages and enable user-wide packages
   - npm set prefix="$HOME/.local"
 - enable automatic mirror list updates
   - sudo nano /etc/xdg/reflector/reflector.config (See the [config](https://github.com/bttger/my-linux/blob/main/reflector.conf))
   - systemctl enable reflector.service
+- Clean the package cache
+  - sudo paccache -r (or `systemctl enable paccache.timer`)
+  - yay -Sc --aur (for AUR packages)
 - Zsh config (See [here](https://github.com/bttger/plugin-manager-free-zsh/))
 
 ## Automatic Backlight Adjustment
@@ -101,7 +105,7 @@ gnome-shell-extension-clipboard-history
 
 - google-chrome
 - vscodium
-	- window.titleBar = custom
+  - window.titleBar = custom
 - vscodium - marketplace
 - docker
   - sudo pacman -Syu docker
@@ -121,8 +125,8 @@ gnome-shell-extension-clipboard-history
 
 ## Backups and snapshots
 
-
 ### Prepare backup/snapshot disk
+
 ```
 lsblk --fs
 sudo fdisk -l /dev/sda
