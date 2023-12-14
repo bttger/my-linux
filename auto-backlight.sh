@@ -10,8 +10,9 @@ hour=$(date +%H)
 # Define the brightness values for each hour
 case $hour in
     18) brightness=60;;
-    19|20) brightness=30;;
-    21|22|23|00|01|02|03|04|05|06|07) brightness=0;;
+    19) brightness=40;;
+    20) brightness=20;;
+    21|22|23|00|01|02|03|04|05) brightness=0;;
     *) brightness=100;;
 esac
 
