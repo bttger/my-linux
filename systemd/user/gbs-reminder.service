@@ -1,0 +1,11 @@
+[Unit]
+Description=GBS Reminder Notifications
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/tom/Documents/vced/my-linux/gbs_reminder_notifications.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
