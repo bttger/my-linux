@@ -146,7 +146,7 @@ dd if=/dev/zero of=/dev/sdb1 status=progress bs=4M
 ### Copying stuff to my backup disk with rsync
 
 ```
-rsync -az --info=progress2 --no-i-r <source_path>/ /<target_path>
+rsync -a <source_path>/ /<target_path>
 ```
 
 > if the origin dir ends with trailing slash, it will copy its contents into target dir, otherwise the origin dir will be copied as single folder into target
